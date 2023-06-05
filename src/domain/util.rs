@@ -106,13 +106,13 @@ pub fn archive_kind(str: &str) -> ArchiveKind {
     }
 }
 
-/// Checks to see if `~/.config/gitrel/` directory exists, and then returns
-/// the `~/.config/gitrel/packages.json` PathBuf.
+/// Checks to see if `~/.config/mkget/` directory exists, and then returns
+/// the `~/.config/mkget/packages.json` PathBuf.
 pub fn packages_file() -> Result<PathBuf> {
     let base_dirs = BaseDirs::new().ok_or_else(|| anyhow!("unable to get usable `base dir`"))?;
     let home_dir = base_dirs.home_dir();
 
-    let cfg_dir = home_dir.join(".config/gitrel/");
+    let cfg_dir = home_dir.join(".config/mkget/");
     fs::create_dir_all(cfg_dir.as_path())
         .with_context(|| format!("unable to create config dir: {:?}", cfg_dir.as_path()))?;
 

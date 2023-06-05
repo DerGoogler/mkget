@@ -9,7 +9,7 @@ config:
   
   # Specify the current working directory path
   # the default is the current working directory path
-  cwd: /Users/logrus/code/rust/gitrel/xtra
+  cwd: /Users/logrus/code/rust/mkget/xtra
   
   # Export additional ENV variables
   env:
@@ -141,7 +141,7 @@ records:
   - delay: 50
     content: "\e[?2004l\r\r\n"
   - delay: 50
-    content: "No managed installationts on this system. Use `gitrel install repo@[*|name|semver]...` to install package(s)\r\n\e[1m\e[7m%\e[27m\e[1m\e[0m                                                                                                             \r \r\e]7;file://logrus-mac.fios-router.home/Users/logrus\a"
+    content: "No managed installationts on this system. Use `mkget install repo@[*|name|semver]...` to install package(s)\r\n\e[1m\e[7m%\e[27m\e[1m\e[0m                                                                                                             \r \r\e]7;file://logrus-mac.fios-router.home/Users/logrus\a"
   - delay: 50
     content: "\r\e[0m\e[27m\e[24m\e[J\r\n\e[1;36m~\e[0m \r\n\e[1;32m❯\e[0m \e[K\e[?2004h"
   - delay: 2000

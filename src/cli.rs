@@ -35,7 +35,7 @@ pub struct InstallArgs {
     pub repo_spec: String,
 
     /// GitHub API token
-    #[clap(short, long, env = "GITREL_TOKEN")]
+    #[clap(short, long, env = "mkget_TOKEN")]
     pub token: Option<String>,
 
     /// rename binary before installation
@@ -93,7 +93,7 @@ pub struct UpdateArgs {
     pub bin_names: Vec<String>,
 
     /// GitHub API token
-    #[clap(short, long, env = "GITREL_TOKEN")]
+    #[clap(short, long, env = "mkget_TOKEN")]
     pub token: Option<String>,
 }
 
@@ -118,7 +118,7 @@ pub struct InfoArgs {
     pub repo_spec: String,
 
     /// GitHub API token
-    #[clap(short, long, env = "GITREL_TOKEN")]
+    #[clap(short, long, env = "mkget_TOKEN")]
     pub token: Option<String>,
 
     /// match asset name using glob pattern

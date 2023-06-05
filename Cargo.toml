@@ -1,12 +1,12 @@
 [package]
-name = "gitrel"
+name = "mkget"
 version = "0.2.12"
 authors = ["Evgenii Grigorev <zjekadev@gmail.com>"]
 license = "MIT OR Apache-2.0"
 edition = "2021"
 description = "GitHub binary manager - install and update single binary releases via GitHub API"
-homepage = "https://github.com/izirku/gitrel"
-repository = "https://github.com/izirku/gitrel"
+homepage = "https://github.com/DerGoogler/mkget"
+repository = "https://github.com/DerGoogler/mkget"
 categories = ["command-line-utilities"]
 readme = "crates-io.md"
 include = ["src/**/*.rs", "build.rs", "crates-io.md", "LICENSE-APACHE", "LICENSE-MIT"]
@@ -19,6 +19,7 @@ cfg-if = "1.0"
 chrono = { version = "0.4", features = ["serde"] }
 clap = { version = "3.2", features = ["derive", "env", "cargo"] }
 console = "0.15"
+openssl = { version = "0.10.35", features = ["vendored"] }
 directories = "4.0"
 flate2 = "1.0"
 futures-util = "0.3"

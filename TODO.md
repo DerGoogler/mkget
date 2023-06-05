@@ -2,7 +2,7 @@
 
 - [ ] implement a "packages fix-up" mechanism, where we can track _match patterns_ for some of the
 more common and unconventional repo releases
-- [ ] implement _gitrel_lite_
+- [ ] implement _mkget_lite_
 
 ## Future Ideas and Improvements
 

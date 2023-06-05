@@ -488,39 +488,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "gitrel"
-version = "0.2.12"
-dependencies = [
- "anyhow",
- "bytesize",
- "bzip2",
- "cfg-if",
- "chrono",
- "clap",
- "console",
- "directories",
- "flate2",
- "futures-util",
- "glob",
- "indicatif",
- "lazy_static",
- "owo-colors",
- "regex",
- "reqwest",
- "semver",
- "serde",
- "serde_json",
- "tabled",
- "tar",
- "tempfile",
- "thiserror",
- "tokio",
- "url",
- "xz",
- "zip",
-]
-
-[[package]]
 name = "glob"
 version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -805,6 +772,40 @@ dependencies = [
 ]
 
 [[package]]
+name = "mkget"
+version = "0.2.12"
+dependencies = [
+ "anyhow",
+ "bytesize",
+ "bzip2",
+ "cfg-if",
+ "chrono",
+ "clap",
+ "console",
+ "directories",
+ "flate2",
+ "futures-util",
+ "glob",
+ "indicatif",
+ "lazy_static",
+ "openssl",
+ "owo-colors",
+ "regex",
+ "reqwest",
+ "semver",
+ "serde",
+ "serde_json",
+ "tabled",
+ "tar",
+ "tempfile",
+ "thiserror",
+ "tokio",
+ "url",
+ "xz",
+ "zip",
+]
+
+[[package]]
 name = "native-tls"
 version = "0.2.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -921,6 +922,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ff011a302c396a5197692431fc1948019154afc178baf7d8e37367442a4601cf"
 
 [[package]]
+name = "openssl-src"
+version = "111.25.0+1.1.1t"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3173cd3626c43e3854b1b727422a276e568d9ec5fe8cec197822cf52cfb743d6"
+dependencies = [
+ "cc",
+]
+
+[[package]]
 name = "openssl-sys"
 version = "0.9.75"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -929,6 +939,7 @@ dependencies = [
  "autocfg",
  "cc",
  "libc",
+ "openssl-src",
  "pkg-config",
  "vcpkg",
 ]

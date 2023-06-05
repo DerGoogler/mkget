@@ -1,4 +1,4 @@
-# GitRel
+# mkget
 
 > GitHub binary manager - install and update single binary releases via GitHub API
 
@@ -7,36 +7,36 @@
 via *Curl/Shell* script (*recommended*):
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/izirku/gitrel/main/xtra/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/izirku/mkget/main/xtra/install.sh)"
 ```
 
 via Cargo:
 
 ```bash
-cargo install gitrel
+cargo install mkget
 ```
 
-Linux and macOS users may want to update *gitrel* just like any other managed binary,
-if installed via *Curl/Shell* script. Simply add *gitrel* itself,
+Linux and macOS users may want to update *mkget* just like any other managed binary,
+if installed via *Curl/Shell* script. Simply add *mkget* itself,
 as one of the installed packages:
 
 ```bash
-gitrel install izirku/gitrel
+mkget install izirku/mkget
 ```
 
 ## Usage
 
 If a `repo` has the same name as `user`/`org`, a *short-hand* can be used,
-so, "`gitrel install rust-analyzer`" is the same as
-"`gitrel install https://github.com/rust-analyzer/rust-analyzer@*`".
+so, "`mkget install rust-analyzer`" is the same as
+"`mkget install https://github.com/rust-analyzer/rust-analyzer@*`".
 Where "`@*`" stands for a *latest release*.
 
 A *SEMVER*, matching a release tag can be specified as `[repo/]user@SEMVER`.
 
-When updating a binary, `gitrel`, if applicable, will first try to update to
+When updating a binary, `mkget`, if applicable, will first try to update to
 a newer compatible semantic version. It will also check the remote's
 *release tag* publish date to what is installed locally. If a remote has a newer
-publish date, `gitrel` will download and install it. This is useful for
+publish date, `mkget` will download and install it. This is useful for
 installing and keeping up to date some *rolling* releases,
 such as `rust-analyzer@nightly`.
 
@@ -49,13 +49,13 @@ of an archive, and use of `**` and `/` is possible there.
 
 ```bash
 # install binary (specific tag)
-gitrel install rust-analyzer@nightly
+mkget install rust-analyzer@nightly
 
 # install binary (latest release)
-gitrel install gokcehan/lf
+mkget install gokcehan/lf
 
 # install binary (match tag to a SemVer)
-gitrel install https://github.com/JohnnyMorganz/StyLua@^0.11
+mkget install https://github.com/JohnnyMorganz/StyLua@^0.11
 ```
 
 ### Advanced Install Examples
@@ -67,13 +67,13 @@ against asset names and archive entires. Here are some examples:
 
 ```bash
 # force install binary, rename, use glob pattern asset match
-gitrel install -fa "bbl-v*_osx" -r bbl cloudfoundry/bosh-bootloader
+mkget install -fa "bbl-v*_osx" -r bbl cloudfoundry/bosh-bootloader
 
 # install binary, strip, use RegEx pattern asset match
-gitrel install -sA "^yq_darwin_amd64$" mikefarah/yq
+mkget install -sA "^yq_darwin_amd64$" mikefarah/yq
 
 # install binary, strip, use glob pattern match on asset and archive entry
-gitrel install -sa "staticcheck_darwin_amd64.tar.gz" \
+mkget install -sa "staticcheck_darwin_amd64.tar.gz" \
   -e "**/staticcheck" -r staticcheck dominikh/go-tools
 ```
 
@@ -86,13 +86,13 @@ It's possible to fix this by running a command post install (currently Linux/mac
 
 ```bash
 # note that env variable `$f` containing installed binary path is exported
-gitrel install -fsa "zld.zip" \
+mkget install -fsa "zld.zip" \
   -p "/usr/local/bin" \
   -x 'install_name_tool -add_rpath /Library/Developer/CommandLineTools/usr/lib $f' \
   michaeleisel/zld
 
 # or use ":bin:" which gets substituted as well
-gitrel install -fsa "zld.zip" \
+mkget install -fsa "zld.zip" \
   -p "/usr/local/bin" \
   -x "install_name_tool -add_rpath /Library/Developer/CommandLineTools/usr/lib :bin:" \
   michaeleisel/zld
@@ -104,26 +104,26 @@ Running `update` will honor any manual matching, renames, binary strip (Linux/ma
 and *post install command* to run (currently Linux/macOS only), as they were specified
 during the `install`. Subsequently, `update` command may fail if a never binary version
 uses a sufficiently different packaging schema. In such case, force re-install such binary
-(i.e. `gitrel install -f ...`), providing new pattern matching parameters.
+(i.e. `mkget install -f ...`), providing new pattern matching parameters.
 
 ```bash
 # update all installed binaries
-gitrel update
+mkget update
 
 # update a single binary
-gitrel update bbl
+mkget update bbl
 
 # uninstall binaries
-gitrel uninstall bbl yq
+mkget uninstall bbl yq
 
 # get information about a release on GitHub
-gitrel info izirku/gitrel
+mkget info izirku/mkget
 
 # list installed binaries
-gitrel list
+mkget list
 
 # list installed binaries, displaying installation path
-gitrel list -w
+mkget list -w
 ```
 
 *NOTE*: Regardless of OS kind, binary files are "installed" under `~/.local/bin`
@@ -132,7 +132,7 @@ created, and binaries are placed there.
 
 ## Configuration
 
-Configuration files are stored in `~/.config/gitrel` directory, regardless of
+Configuration files are stored in `~/.config/mkget` directory, regardless of
 an operating system kind. Currently, it only stores the `packages.json` there.
 
 # Disclamer
